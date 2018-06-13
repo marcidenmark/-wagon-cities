@@ -25,4 +25,5 @@ const cities =
   { name: "Lille", address: "2 Avenue des Saules, 59000 Lille", slug: "lille" },
   { name: "Lyon", address: "23 Rue Paul Montrochet, 69002 Lyon", slug: "lyon" }
 ]
+
 export default cities;
