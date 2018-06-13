@@ -9,11 +9,9 @@ import App from './components/app';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
-const reducers = combineReducers({
-	cities: citiesReducer,
-
-	//keys / reducers
-});
+ const reducers = combineReducers({
+   changeMe: (state = null, action) => state
+ });
 // const reducers = combineReducers({
 // 	flats: flatsReducer,
 // 	selectedFlat: selectedFlatReducer
