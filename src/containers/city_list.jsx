@@ -14,7 +14,7 @@ class CityList extends Component {
 	render() {
 		return (
 			<div className="list-group-item">
-				{this.props.cities.map((city) => <City city={city} key={city.name} />)}
+				{this.props.cities.map((city) => <City key={city.name} city={city}  />)}
 			</div>
 		);
 	}
