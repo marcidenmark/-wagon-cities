@@ -6,6 +6,7 @@ import { createStore, combineReducers } from 'redux';
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
 import citiesReducer from './reducers/cities_reducer';
+import activeCityReducer from './reducers/active_city_reducer';
 
 // State and reducers
  // const reducers = combineReducers({
@@ -13,7 +14,10 @@ import citiesReducer from './reducers/cities_reducer';
  // });
 const reducers = combineReducers({
 	cities: citiesReducer,
-	// selectedFlat: selectedFlatReducer
+	city: activeCityReducer,
+	// this needs to be
+	// the select city action
+
 	//keys / reducers
 });
 // render an instance of the component in the DOM

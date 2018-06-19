@@ -7,10 +7,12 @@ export function setCities() {
 		payload: cities
 	};
 }
-
+//I think this one is for the ActiveCity component.
+//to do below:
+//Make a click event to load the city
 export function selectCity(city) {
 	return {
-		type: 'SELECT_CITY',
+		type: 'SELECTED_CITY',
 		payload: city
 	};
 }

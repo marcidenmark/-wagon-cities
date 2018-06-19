@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
 import CityList from '../containers/city_list';
 import City from '../containers/city';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectCity } from '../actions';
+// import { selectCity } from '../actions';
 
 class ActiveCity extends Component {
 	componentWillMount() {
-		this.props.selectCity();
+		this.props.selectCity(city);
 	}
 
 	render() {
+		const src = `https://kitt.lewagon.com/placeholder/cities/${props.activeCity.slug}`;
 		return (
 			<div className="active-city">
-			<h2> fkdæsafjæ</h2>
-
+				<img src={src} alt="" />
+				<h2> fkdæsafjæ</h2>
+				<p> </p>
 			</div>
-			)
+			);
 	}
 }
 
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators(
-		{ selectCity: selectCity },
-		dispatch
-		);
-}
 
-function mapReduxStateToProps(reduxState) {
+
+function mapStateToProps(state) {
 	return {
-		city: reduxState.city
+		city: state.city
 	};
 }
 
 
-export default connect(mapReduxStateToProps, mapDispatchToProps)(ActiveCity);
+export default connect(mapStateToProps)(ActiveCity);
