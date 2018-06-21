@@ -13,7 +13,7 @@ class City extends Component {
 
 	render () {
 		return (
-			<div className="cities">
+			<div className="list-group-item" onClick={this.handleClick} >
 				<li>	{this.props.city.name}
 				</li>
 			</div>
@@ -28,10 +28,10 @@ function mapDispatchToProps(dispatch) {
 		);
 }
 
- function mapStateToProps(State) {
-	return {
-		selectedCity: State.selectedCity
-	};
-}
+//  function mapStateToProps(State) {
+// 	return {
+// 		selectedCity: State.selectedCity
+// 	};
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(City);
+export default connect(mapDispatchToProps)(City);

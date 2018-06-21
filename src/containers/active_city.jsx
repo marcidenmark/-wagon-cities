@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import CityList from '../containers/city_list';
-import City from '../containers/city';
+// import CityList from '../containers/city_list';
+// import City from '../containers/city';
 
-import { selectCity } from '../actions';
+// import { selectCity } from '../actions';
 
 class ActiveCity extends Component {
 
@@ -22,7 +22,7 @@ class ActiveCity extends Component {
         }
 
 		// const src = `https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`;
-        const src = `https://kitt.lewagon.com/placeholder/cities/ + this.props.city.slug}`;
+        const src = `https://kitt.lewagon.com/placeholder/cities/ + this.props.city.{:slug}}`;
         return (
 			<div className="active-city">
 				<img src={src} alt="" />
@@ -40,4 +40,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(ActiveCity);
+export default connect(mapStateToProps, null)(ActiveCity);
