@@ -23,7 +23,7 @@ class City extends Component {
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators(
-		{ setCities: setCities } ,
+		{ selectCity: selectCity } ,
 		dispatch
 		);
 }
@@ -33,6 +33,5 @@ function mapDispatchToProps(dispatch) {
 		selectedCity: State.selectedCity
 	};
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(City);

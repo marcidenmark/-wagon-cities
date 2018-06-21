@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import CityList from '../containers/city_list';
 import City from '../containers/city';
-// import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-// import { selectCity } from '../actions';
+
+import { selectCity } from '../actions';
 
 class ActiveCity extends Component {
-	componentWillMount() {
-		this.props.selectCity(city);
-	}
 
 	render() {
-		const src = `https://kitt.lewagon.com/placeholder/cities/${props.activeCity.slug}`;
-		return (
+        const style = {
+            width: '100%'
+        }
+
+        if(this.props.city === null) {
+            return (
+                <div className="active-city">
+                    <p>Click on a city!</p>
+                </div>
+            )
+        }
+
+		// const src = `https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`;
+        const src = `https://kitt.lewagon.com/placeholder/cities/ + this.props.city.slug}`;
+        return (
 			<div className="active-city">
 				<img src={src} alt="" />
 				<h2> fkdæsafjæ</h2>
@@ -22,11 +33,9 @@ class ActiveCity extends Component {
 	}
 }
 
-
-
 function mapStateToProps(state) {
 	return {
-		city: state.city
+		city: state.activeCity
 	};
 }
 
