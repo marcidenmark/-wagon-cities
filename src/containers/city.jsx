@@ -7,16 +7,17 @@ import { selectCity } from '../actions'
 
 
 class City extends Component {
-	handleClick = () => {
+	handleClick = (event) => {
 		this.props.selectCity(this.props.city);
 	}
 
 	render () {
 		return (
-			<div className="list-group-item" onClick={this.handleClick} >
-				<li>	{this.props.city.name}
-				</li>
-			</div>
+            <li
+            className="list-group-item"
+            onClick={this.handleClick}>{this.props.city.name}
+
+			</li>
 			)
 	}
 }
@@ -34,4 +35,4 @@ function mapDispatchToProps(dispatch) {
 // 	};
 // }
 
-export default connect(mapDispatchToProps)(City);
+export default connect(null, mapDispatchToProps)(City);

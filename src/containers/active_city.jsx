@@ -13,7 +13,7 @@ class ActiveCity extends Component {
             width: '100%'
         }
 
-        if(this.props.city === null) {
+        if(this.props.city === undefined) {
             return (
                 <div className="active-city">
                     <p>Click on a city!</p>
@@ -26,6 +26,8 @@ class ActiveCity extends Component {
         return (
 			<div className="active-city">
 				<img src={src} alt="" />
+                <h3>{this.props.city.name}</h3>
+                <p>{this.props.city.address} </p>
 				<h2> fkdæsafjæ</h2>
 				<p> </p>
 			</div>
@@ -40,4 +42,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, null)(ActiveCity);
+export default connect(null,mapStateToProps)(ActiveCity);
