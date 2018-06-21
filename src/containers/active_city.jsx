@@ -9,11 +9,9 @@ import { connect } from 'react-redux';
 class ActiveCity extends Component {
 
 	render() {
-        const style = {
-            width: '100%'
-        }
 
-        if(this.props.city === undefined) {
+
+        if(this.props.city === null) {
             return (
                 <div className="active-city">
                     <p>Click on a city!</p>
@@ -21,25 +19,26 @@ class ActiveCity extends Component {
             )
         }
 
-		// const src = `https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`;
-        const src = `https://kitt.lewagon.com/placeholder/cities/ + this.props.city.{:slug}}`;
+		const src = `https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`;
         return (
 			<div className="active-city">
-				<img src={src} alt="" />
                 <h3>{this.props.city.name}</h3>
                 <p>{this.props.city.address} </p>
-				<h2> fkdæsafjæ</h2>
-				<p> </p>
+				<img src={src} width="100%" alt="" />
+
 			</div>
 			);
 	}
 }
 
+
+
+
 function mapStateToProps(state) {
 	return {
-		city: state.activeCity
+		city: state.city
 	};
 }
 
 
-export default connect(null,mapStateToProps)(ActiveCity);
+export default connect(mapStateToProps)(ActiveCity);
